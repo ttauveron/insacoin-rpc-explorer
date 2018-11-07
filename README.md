@@ -1,3 +1,7 @@
+# INSACOIN RPC Explorer
+A fork of the [Bitcoin network explorer](https://github.com/janoside/btc-rpc-explorer), by [janoside](https://github.com/janoside) adapted for insacoin. Below is the original README of the project.
+  
+  
 # BTC RPC Explorer
 
 Simple, database-free Bitcoin blockchain explorer, via RPC. Built with Node.js, express, bootstrap-v4.
