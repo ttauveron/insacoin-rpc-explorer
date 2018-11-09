@@ -139,7 +139,7 @@ app.runOnStartup = function() {
 			console.log("Error 31207ugf4e0fed: " + err + ", while initializing ElectrumX API");
 		});
 	}
-
+	/*
 	if (global.coinConfig.miningPoolsConfigUrls) {
 		var promises = [];
 
@@ -174,7 +174,7 @@ app.runOnStartup = function() {
 				}
 			}
 		});
-	}
+	}*/
 
 	if (global.sourcecodeVersion == null) {
 		simpleGit(".").log(["-n 1"], function(err, log) {
