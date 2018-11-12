@@ -116,7 +116,7 @@ module.exports = {
 	headerDropdownLinks: {
 		title:"Related Sites",
 		links:[
-			{name: "Crypto Lyon", url:"https://crypto-lyon.fr/", imgUrl:"/img/logo/btc.svg"},
+			{name: "Crypto Lyon", url:"https://crypto-lyon.fr/", imgUrl:"/img/logo/isc.png"},
 		]
 	}
 };

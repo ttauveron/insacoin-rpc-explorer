@@ -44,6 +44,9 @@ block content
 									i(class="fas fa-unlock-alt fa-2x mr-2", style="margin-top: 6px; margin-left: 3px;")
 
 							span(class="font-weight-bold") Unconfirmed Transactions
+							p(class="lead") #{mempoolInfo.size.toLocaleString()} tx 
+								- var mempoolBytesData = utils.formatLargeNumber(mempoolInfo.usage, 2);
+								span(class="text-muted") (#{mempoolBytesData[0]} #{mempoolBytesData[1].abbreviation}B)
 
 
 						li

@@ -32,7 +32,7 @@ var ltcCurrencyUnits = [
 module.exports = {
         name:"INSAcoin",
         ticker:"ISC",
-        logoUrl:"/img/logo/ltc.svg",
+        logoUrl:"/img/logo/isc.png",
         siteTitle:"INSAcoin Explorer",
         nodeTitle:"INSAcoin Full Node",
         nodeUrl:"https://crypto-lyon.fr",
