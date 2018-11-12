@@ -149,14 +149,4 @@ html(lang="en")
 			script.
 				Sentry.init({ dsn: '#{config.credentials.sentryUrl}' });
 
-		if (config.credentials.googleAnalyticsTrackingId && config.credentials.googleAnalyticsTrackingId.trim().length > 0)
-			script(async, src=("https://www.googletagmanager.com/gtag/js?id=" + config.credentials.googleAnalyticsTrackingId))
-			script.
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
-
-				gtag('config', '#{config.credentials.googleAnalyticsTrackingId}');
-
-		
 		block endOfBody
