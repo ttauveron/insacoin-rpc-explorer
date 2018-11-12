@@ -16,12 +16,21 @@ function getNetTotals() {
 }
 
 function getMempoolInfo() {
-	return new Promise(function(resolve, reject) {
+	/*return new Promise(function(resolve, reject) {
 		getRpcData("getmempoolinfo").then((info) => {
 			resolve(info);
 		}).catch((err) => {
 			reject(err);
 		});
+	});*/
+	return new Promise(function(resolve, reject) {
+		resolve({
+		size: 0,
+		bytes: 0,
+		usage: 0,
+		maxmempool: 0,
+		mempoolminfee: 0,
+		minrelaytxfee: 0});
 	});
 }
 
