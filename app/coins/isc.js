@@ -93,7 +93,7 @@ module.exports = {
 		},
 	],
 	exchangeRateData:{
-		jsonUrl:"https://api.coinmarketcap.com/v1/ticker/Litecoin/",
+		jsonUrl:"https://api.coinmarketcap.com/v1/ticker/Insacoin/",
 		exchangedCurrencyName:"usd",
 		responseBodySelectorFunction:function(responseBody) {
 			if (responseBody[0] && responseBody[0].price_usd) {

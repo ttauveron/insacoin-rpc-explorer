@@ -16,7 +16,13 @@ function getNetTotals() {
 }
 
 function getMempoolInfo() {
-	return getRpcData("getmempoolinfo");
+	return new Promise(function(resolve, reject) {
+		getRpcData("getmempoolinfo").then((info) => {
+			resolve(info);
+		}).catch((err) => {
+			reject(err);
+		});
+	});
 }
 
 function getMiningInfo() {
