@@ -36,7 +36,16 @@ function getRawMempool() {
 }
 
 function getChainTxStats(blockCount) {
-	return getRpcDataWithParams("getchaintxstats", blockCount);
+	return new Promise(function(resolve, reject) { 
+		getBlockchainInfo().then((info) => {
+			maxCount = info['blocks'];
+			if (blockCount >= maxCount)
+				blockCount = maxCount-1;
+			resolve(getRpcDataWithParams("getchaintxstats", blockCount.toString()));
+		}).catch((err) => {
+			reject(err);
+		});
+	});
 }
 
 function getBlockByHeight(blockHeight) {
