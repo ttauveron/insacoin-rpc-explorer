@@ -68,7 +68,7 @@ module.exports = {
 		],
 		"vout":[
 			{
-				"value":"50.00000000",
+				"value":"42.00000000",
 				"n":0,
 				"scriptPubKey":{
 					"hex":"040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9 OP_CHECKSIG",
@@ -84,7 +84,7 @@ module.exports = {
 	historicalData: [
 		{
 			type: "blockheight",
-			date: "2011-10-07",
+			date: "2018-10-15",
 			blockHeight: 0,
 			blockHash: "1952e403e8d57b1802ce37b7cc95a371a5627cc74b2b52794339e7cf4ca95ac7",
 			summary: "The insacoin genesis block.",
@@ -104,7 +104,7 @@ module.exports = {
 		}
 	},
 	blockRewardFunction:function(blockHeight) {
-		var eras = [ new Decimal8(50) ];
+		var eras = [ new Decimal8(42) ];
 		for (var i = 1; i < 34; i++) {
 			var previous = eras[i - 1];
 			eras.push(new Decimal8(previous).dividedBy(2));
