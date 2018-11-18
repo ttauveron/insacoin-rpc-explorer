@@ -163,6 +163,7 @@ function getRawTransaction(txid) {
 		getRawTransactions([txid]).then(function(results) {
 			if (results && results.length > 0) {
 				if (results[0].txid) {
+					console.log("\n\n r "+JSON.stringify(results[0]));
 					resolve(results[0]);
 
 				} else {
@@ -182,7 +183,7 @@ function getAddress(address) {
 }
 
 function getRawTransactions(txids) {
-	//console.log("getRawTransactions: " + txids);
+	//console.log("\n\ngetRawTransactions: " + txids);
 
 	return new Promise(function(resolve, reject) {
 		if (!txids || txids.length == 0) {
@@ -195,7 +196,6 @@ function getRawTransactions(txids) {
 		var promises = [];
 		for (var i = 0; i < txids.length; i++) {
 			var txid = txids[i];
-			
 			if (txid) {
 				if (coins[config.coin].genesisCoinbaseTransactionId && txid == coins[config.coin].genesisCoinbaseTransactionId) {
 					// copy the "confirmations" field from genesis block to the genesis-coinbase tx
@@ -203,7 +203,6 @@ function getRawTransactions(txids) {
 						getBlockchainInfo().then(function(blockchainInfoResult) {
 							var result = coins[config.coin].genesisCoinbaseTransaction;
 							result.confirmations = blockchainInfoResult.blocks;
-
 							resolve2([result]);
 
 						}).catch(function(err) {
@@ -232,6 +231,13 @@ function getRawTransactions(txids) {
 			var finalResults = [];
 			for (var i = 0; i < results.length; i++) {
 				for (var j = 0; j < results[i].length; j++) {
+					// Adding a "size" entry
+					if (!('size' in results[i][j]))
+						results[i][j].size = results[i][j].hex.length / 2;
+					// Adding a "vsize" entry
+					if (!('vsize' in results[i][j]))
+						results[i][j].vsize = results[i][j].hex.length / 2;
+
 					finalResults.push(results[i][j]);
 				}
 			}
